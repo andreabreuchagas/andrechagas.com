@@ -1,2 +1,0 @@
-# chagas.pro
-Chagas.pro
