@@ -1,14 +1,21 @@
-
-<HTML>
-
-<HEAD>
-<script>
-function getIPFromAmazon() {
-  fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => console.log(data))
+<html xmlns=”http://www.w3.org/1999/xhtml”>
+<head>
+<title></title>
+<script type=”text/javascript”>
+window.onload = function () {
+var script = document.createElement(“script”);
+script.type = “text/javascript”;
+script.src = “https://api.ipify.org?format=jsonp&callback=DisplayIP”;
+document.getElementsByTagName(“head”)[0].appendChild(script);
+};
+function DisplayIP(response) {
+document.getElementById(“ipaddress”).innerHTML = “Your IP Address is ” + response.ip;
 }
-
-getIPFromAmazon()
 </script>
-
-</HEAD>
-</HTML>
+</head>
+<body>
+<form>
+<span id = “ipaddress”></span>
+</form>
+</body>
+</html>
